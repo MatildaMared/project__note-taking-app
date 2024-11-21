@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import StyledComponentsRegistry from "@/lib/registry";
 import Menu from "./components/Menu";
 
 const geistSans = localFont({
@@ -28,12 +27,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <StyledComponentsRegistry>
-                    <>
-                        <Menu />
-                        {children}
-                    </>
-                </StyledComponentsRegistry>
+                <>
+                    <Menu />
+                    {children}
+                </>
             </body>
         </html>
     );
