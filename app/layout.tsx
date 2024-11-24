@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Menu from "../components/Menu";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -27,10 +26,9 @@ export default function RootLayout({
     return (
         <html lang="en" className="h-full">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} h-full bg-gray-100 text-neutral-700 dark:bg-neutral-950 dark:text-neutral-100`}
+                className={`${geistSans.variable} ${geistMono.variable} h-full bg-gray-100 text-neutral-700 dark:bg-neutral-950 dark:text-neutral-300`}
             >
-                <div className="mx-auto h-full max-w-(--breakpoint-2xl) border border-red-500">
-                    <Menu />
+                <div className="mx-auto h-full max-w-(--breakpoint-xl) xl:border-x xl:border-x-neutral-200 dark:xl:border-x-neutral-700">
                     {children}
                 </div>
             </body>
