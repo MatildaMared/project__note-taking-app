@@ -25,14 +25,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="h-full">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} dark:bg-neutral-900 bg-gray-100`}
+                className={`${geistSans.variable} ${geistMono.variable} bg-gray-100 h-full text-neutral-700 dark:bg-neutral-950 dark:text-neutral-100`}
             >
-                <>
+                <div className="mx-auto h-full max-w-screen-2xl border border-red-500">
                     <Menu />
                     {children}
-                </>
+                </div>
             </body>
         </html>
     );
