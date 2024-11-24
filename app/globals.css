@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Manually set dark mode */
-/* @variant dark (&:where(.dark, .dark *)); */
+@variant dark (&:where(.dark, .dark *));
 
 /* @variant theme-midnight (&:where([data-theme="midnight"] *)); 
 This lets you write utilities like and theme-midnight:bg-slate-900.*/
