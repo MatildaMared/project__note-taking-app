@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import useTheme from "@/hooks/useTheme";
-
 import React from "react";
 
 function Menu() {

@@ -17,6 +17,7 @@ export default function useDarkMode() {
                 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
                 if (!themeFromStorage) {
                     setTheme(prefersDark ? "dark" : "light");
+                    window.localStorage.setItem("theme", prefersDark ? "dark" : "light");
                 }
             }
         }
