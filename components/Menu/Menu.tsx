@@ -18,8 +18,8 @@ function Menu() {
                 <Image src={logoImg} alt="Logo" width={100} height={95} />
             </Link>
             <nav className="flex flex-col gap-0.5">
-                <Link href="/notes" className="flex gap-2">
-                    <Icon type="home" fill="blue" />
+                <Link href="/notes" className="flex items-center gap-2 rounded-md p-2 hover:bg-neutral-100">
+                    <Icon type="home" className="text-blue-500" />
                     All Notes
                 </Link>
                 <Link href="/notes/archived">Archived Notes</Link>

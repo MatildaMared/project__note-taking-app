@@ -1,9 +1,20 @@
 import * as React from "react";
 
-function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
+import { IconProps } from "./Icon";
+
+function HomeIcon(props: IconProps) {
     const { fill = "currentColor" } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            {...props}
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            preserveAspectRatio="none"
+        >
             <path
                 fill={fill}
                 fillRule="evenodd"

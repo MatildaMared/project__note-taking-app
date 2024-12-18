@@ -1,5 +1,3 @@
-// create a hook that returns the current theme and a function to toggle it
-
 import React from "react";
 
 export type Theme = "light" | "dark";

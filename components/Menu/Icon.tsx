@@ -2,7 +2,7 @@ import React from "react";
 
 import HomeIcon from "./HomeIcon";
 
-interface IconProps {
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
     type: IconType;
     color?: string;
 }
@@ -27,6 +27,7 @@ export type IconType =
     | "sun";
 
 function Icon(props: IconProps) {
+
     switch (props.type) {
         case "home":
             return <HomeIcon {...props} />;
