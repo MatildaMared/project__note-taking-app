@@ -12,17 +12,20 @@ function Menu() {
     const logoImg = theme === "dark" ? "/images/logo-dark.svg" : "/images/logo.svg";
 
     return (
-        <div className="flex h-full min-w-60 flex-col gap-4 border-r border-r-neutral-200 p-4 dark:border-r-neutral-700">
+        <div className="flex h-full min-w-60 flex-col gap-6 border-r border-r-neutral-200 p-4 dark:border-r-neutral-700">
             <Link href="/notes">
                 <p className="sr-only">Home</p>
                 <Image src={logoImg} alt="Logo" width={100} height={95} />
             </Link>
-            <nav className="flex flex-col gap-0.5">
+            <nav className="flex flex-col">
                 <Link href="/notes" className="flex items-center gap-2 rounded-md p-2 hover:bg-neutral-100">
                     <Icon type="home" className="text-blue-500" />
                     All Notes
                 </Link>
-                <Link href="/notes/archived">Archived Notes</Link>
+                <Link href="/notes/archived" className="flex items-center gap-2 rounded-md p-2 hover:bg-neutral-100">
+                    <Icon type="archive" className="text-blue-500" />
+                    Archived Notes
+                </Link>
             </nav>
             <button
                 onClick={toggleDarkMode}

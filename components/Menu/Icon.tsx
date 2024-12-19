@@ -1,5 +1,6 @@
 import React from "react";
 
+import ArchiveIcon from "./ArhiveIcon";
 import HomeIcon from "./HomeIcon";
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -27,10 +28,11 @@ export type IconType =
     | "sun";
 
 function Icon(props: IconProps) {
-
     switch (props.type) {
         case "home":
             return <HomeIcon {...props} />;
+        case "archive":
+            return <ArchiveIcon {...props} />;
         default:
             return <></>;
     }
