@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import Icon from "./Icon";
+import MenuLink from "./MenuLink";
 
 function Menu() {
     const { theme, toggleDarkMode } = useTheme();
@@ -18,14 +18,12 @@ function Menu() {
                 <Image src={logoImg} alt="Logo" width={100} height={95} />
             </Link>
             <nav className="flex flex-col">
-                <Link href="/notes" className="flex items-center gap-2 rounded-md p-2 hover:bg-neutral-100">
-                    <Icon type="home" className="text-blue-500" />
+                <MenuLink iconType="home" href="/notes">
                     All Notes
-                </Link>
-                <Link href="/notes/archived" className="flex items-center gap-2 rounded-md p-2 hover:bg-neutral-100">
-                    <Icon type="archive" className="text-blue-500" />
+                </MenuLink>
+                <MenuLink iconType="archive" href="/notes/archived">
                     Archived Notes
-                </Link>
+                </MenuLink>
             </nav>
             <button
                 onClick={toggleDarkMode}
