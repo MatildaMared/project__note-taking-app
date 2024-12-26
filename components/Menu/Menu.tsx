@@ -2,12 +2,14 @@
 import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 import MenuLink from "./MenuLink";
 
 function Menu() {
     const { theme, toggleDarkMode } = useTheme();
+    const pathName = usePathname();
 
     const logoImg = theme === "dark" ? "/images/logo-dark.svg" : "/images/logo.svg";
 
@@ -17,11 +19,11 @@ function Menu() {
                 <p className="sr-only">Home</p>
                 <Image src={logoImg} alt="Logo" width={100} height={95} />
             </Link>
-            <nav className="flex flex-col">
-                <MenuLink iconType="home" href="/notes">
+            <nav className="flex flex-col gap-0.5">
+                <MenuLink iconType="home" href="/notes" active={pathName === "/notes"}>
                     All Notes
                 </MenuLink>
-                <MenuLink iconType="archive" href="/notes/archived">
+                <MenuLink iconType="archive" href="/notes/archived" active={pathName === "/notes/archived"}>
                     Archived Notes
                 </MenuLink>
             </nav>
