@@ -1,6 +1,7 @@
 import React from "react";
 
 import ArchiveIcon from "./ArhiveIcon";
+import ChevronRightIcon from "./ChevronRightIcon";
 import HomeIcon from "./HomeIcon";
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -9,23 +10,24 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 export type IconType =
-    | "home"
     | "archive"
-    | "trash"
-    | "settings"
-    | "plus"
-    | "edit"
-    | "search"
-    | "close"
-    | "menu"
-    | "tag"
     | "calendar"
-    | "user"
+    | "chevron-right"
+    | "close"
+    | "edit"
+    | "home"
     | "lock"
-    | "unlock"
     | "logout"
+    | "menu"
     | "moon"
-    | "sun";
+    | "plus"
+    | "search"
+    | "settings"
+    | "sun"
+    | "tag"
+    | "trash"
+    | "unlock"
+    | "user";
 
 function Icon(props: IconProps) {
     switch (props.type) {
@@ -33,6 +35,8 @@ function Icon(props: IconProps) {
             return <HomeIcon {...props} />;
         case "archive":
             return <ArchiveIcon {...props} />;
+        case "chevron-right":
+            return <ChevronRightIcon {...props} />;
         default:
             return <></>;
     }
