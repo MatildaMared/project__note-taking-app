@@ -14,7 +14,7 @@ function MenuLink({ iconType, href, active, children }: MenuLinkProps) {
     return (
         <Link
             href={href}
-            className={`flex items-center gap-2 rounded-md p-2 transition duration-300 ease-in-out hover:bg-neutral-100 hover:text-blue-500 dark:hover:bg-neutral-800 ${active ? "bg-neutral-100 text-blue-500 dark:bg-neutral-800" : ""}`}
+            className={`group flex items-center gap-2 rounded-md p-2 transition duration-300 ease-in-out hover:bg-neutral-100 hover:text-blue-500 dark:hover:bg-neutral-800 ${active ? "bg-neutral-100 text-blue-500 dark:bg-neutral-800" : ""}`}
         >
             <Icon type={iconType} className="" />
             <span
@@ -22,6 +22,10 @@ function MenuLink({ iconType, href, active, children }: MenuLinkProps) {
             >
                 {children}
             </span>
+            <Icon
+                type="chevron-right"
+                className={`ml-auto ${active ? "block" : "hidden"} text-neutral-900 group-hover:block dark:text-neutral-100`}
+            />
         </Link>
     );
 }
