@@ -5,11 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import data from "../../data.json";
 import MenuLink from "./MenuLink";
 
 function Menu() {
     const { theme, toggleDarkMode } = useTheme();
     const pathName = usePathname();
+    const notes = data.notes;
+    const tags = new Set(notes.flatMap((note) => note.tags));
 
     const logoImg = theme === "dark" ? "/images/logo-dark.svg" : "/images/logo.svg";
 
@@ -26,6 +29,16 @@ function Menu() {
                 <MenuLink iconType="archive" href="/notes/archived" active={pathName === "/notes/archived"}>
                     Archived Notes
                 </MenuLink>
+                {Array.from(tags).map((tag) => (
+                    <MenuLink
+                        key={tag}
+                        iconType="tag"
+                        href={`/notes/tags/${tag}`}
+                        active={pathName === `/notes/tags/${tag}`}
+                    >
+                        {tag}
+                    </MenuLink>
+                ))}
             </nav>
             <button
                 onClick={toggleDarkMode}
