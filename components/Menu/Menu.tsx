@@ -11,6 +11,8 @@ import MenuLink from "./MenuLink";
 function Menu() {
     const { theme, toggleDarkMode } = useTheme();
     const pathName = usePathname();
+
+    // TODO: Import data from DB
     const notes = data.notes;
     const tags = new Set(notes.flatMap((note) => note.tags));
 
@@ -29,6 +31,8 @@ function Menu() {
                 <MenuLink iconType="archive" href="/notes/archived" active={pathName === "/notes/archived"}>
                     Archived Notes
                 </MenuLink>
+                <div className="mt-1 mb-2 h-0.25 bg-neutral-200 dark:bg-neutral-700" />
+                <h2 className="mb-1 text-sm text-neutral-500 dark:text-neutral-400">Tags</h2>
                 {Array.from(tags).map((tag) => (
                     <MenuLink
                         key={tag}
