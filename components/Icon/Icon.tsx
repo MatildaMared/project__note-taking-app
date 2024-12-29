@@ -3,6 +3,7 @@ import React from "react";
 import ArchiveIcon from "./ArhiveIcon";
 import ChevronRightIcon from "./ChevronRightIcon";
 import HomeIcon from "./HomeIcon";
+import TagIcon from "./TagIcon";
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
     type: IconType;
@@ -37,6 +38,8 @@ function Icon(props: IconProps) {
             return <ArchiveIcon {...props} />;
         case "chevron-right":
             return <ChevronRightIcon {...props} />;
+        case "tag":
+            return <TagIcon {...props} />;
         default:
             return <></>;
     }

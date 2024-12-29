@@ -25,12 +25,14 @@ function Menu() {
                 <Image src={logoImg} alt="Logo" width={100} height={95} />
             </Link>
             <nav className="flex flex-col gap-0.5">
-                <MenuLink iconType="home" href="/notes" active={pathName === "/notes"}>
-                    All Notes
-                </MenuLink>
-                <MenuLink iconType="archive" href="/notes/archived" active={pathName === "/notes/archived"}>
-                    Archived Notes
-                </MenuLink>
+                <ul>
+                    <MenuLink iconType="home" href="/notes" active={pathName === "/notes"}>
+                        All Notes
+                    </MenuLink>
+                    <MenuLink iconType="archive" href="/notes/archived" active={pathName === "/notes/archived"}>
+                        Archived Notes
+                    </MenuLink>
+                </ul>
                 <div className="mt-1 mb-2 h-0.25 bg-neutral-200 dark:bg-neutral-700" />
                 <h2 className="mb-1 text-sm text-neutral-500 dark:text-neutral-400">Tags</h2>
                 {Array.from(tags).map((tag) => (
