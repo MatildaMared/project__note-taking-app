@@ -35,16 +35,17 @@ function Menu() {
                 </ul>
                 <div className="mt-1 mb-2 h-0.25 bg-neutral-200 dark:bg-neutral-700" />
                 <h2 className="mb-1 text-sm text-neutral-500 dark:text-neutral-400">Tags</h2>
-                {Array.from(tags).map((tag) => (
-                    <MenuLink
-                        key={tag}
-                        iconType="tag"
-                        href={`/notes/tags/${tag}`}
-                        active={pathName === `/notes/tags/${tag}`}
-                    >
-                        {tag}
-                    </MenuLink>
-                ))}
+                <ul>
+                    {Array.from(tags).map((tag) => (
+                            <MenuLink
+                                iconType="tag"
+                                href={`/notes/tags/${tag}`}
+                                active={pathName === `/notes/tags/${tag}`}
+                            >
+                                {tag}
+                            </MenuLink>
+                    ))}
+                </ul>
             </nav>
             <button
                 onClick={toggleDarkMode}
